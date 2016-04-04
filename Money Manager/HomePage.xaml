@@ -1,0 +1,63 @@
+﻿<Page
+    x:Class="Money_Manager.HomePage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Money_Manager"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    
+    mc:Ignorable="d"
+    
+    >
+    <Page.Resources>
+        <Flyout x:Name="flbAmountGetter" x:Key="flbAmountGetter">
+            <Grid Height="100" Width="100">
+                <StackPanel>
+                    <StackPanel>
+                        <TextBlock Text="Amount:" HorizontalAlignment="Center"/>
+                        <TextBox HorizontalContentAlignment="Right" Name="tbFundsToAdd" HorizontalAlignment="Center"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <Button Name="btnDone" Click="Add_Click" Content="Done" HorizontalAlignment="Stretch"/>
+                    </StackPanel>
+                </StackPanel>
+            </Grid>
+        </Flyout>
+    </Page.Resources>
+
+
+
+    <StackPanel Background="DimGray">
+
+        <StackPanel Orientation="Horizontal">
+            <TextBlock FontSize="34" FontFamily="segoe" FontWeight="SemiBold" Text="Welcome " Margin="5"/>
+            <TextBlock FontSize="34" FontFamily="segoe" FontWeight="SemiBold" Text="{x:Bind firstName, Mode=OneWay}" Margin="5" />
+
+        </StackPanel>
+        <TextBlock FontSize="20" Margin="5" FontFamily="segoe" Text="Your current available funds are: " />
+        <StackPanel Orientation="Horizontal">
+            <TextBlock FontSize="50" Text="{x:Bind currency}" Width="55" />
+            <TextBlock Foreground="LightGreen" FontSize="50" Text="{x:Bind balance, Mode=OneWay}" Width="auto" />
+        </StackPanel>
+        <TextBlock FontSize="20" Margin="5" FontFamily="segoe" Text="Your current reserved funds are: " />
+        <StackPanel Orientation="Horizontal" >
+            <TextBlock FontSize="50" Text="{x:Bind currency}" Width="55" />
+            <TextBlock Foreground="LightBlue" FontSize="50" Text="{x:Bind reservedBalance, Mode=OneWay}" Width="auto" />
+        </StackPanel>
+        <TextBlock FontSize="20" Margin="5" FontFamily="segoe" Text="Your total funds are: " />
+        <StackPanel Orientation="Horizontal">
+            <TextBlock FontSize="50" Text="{x:Bind currency}" Width="55" />
+            <TextBlock Foreground="CadetBlue" FontSize="50" Text="{x:Bind fullBalance, Mode=OneWay}" Width="auto" />        
+        </StackPanel>
+        <StackPanel>
+            <Button Name="btnAddFunds" Click="btnAddFunds_Click" Content="Add Funds" HorizontalAlignment="Stretch" Flyout="{StaticResource flbAmountGetter}" />
+            <Button Name="btnSubtractFunds" Click="btnSubtractFunds_Click" Content="Subtract Funds" HorizontalAlignment="Stretch" Flyout="{StaticResource flbAmountGetter}" />
+            <Button Name="btnAddReserve" Click="btnAddReserve_Click" Content="Add Reserve" HorizontalAlignment="Stretch" Flyout="{StaticResource flbAmountGetter}" />
+            <Button Name="btnSubtractReserve" Click="btnSubtractReserve_Click" Content="Subtract Reserve" HorizontalAlignment="Stretch" Flyout="{StaticResource flbAmountGetter}" />
+        </StackPanel>
+        <StackPanel VerticalAlignment="Bottom" Margin="0,20, 0, 0">
+            <Button Name="btnExit" Click="btnExit_Click" Content="Save and Exit" HorizontalAlignment="Stretch" />
+        </StackPanel>
+
+    </StackPanel>
+</Page>

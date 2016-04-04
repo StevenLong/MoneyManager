@@ -1,0 +1,66 @@
+﻿<Page
+    x:Class="Money_Manager.NewAccountPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Money_Manager"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <StackPanel Background="DimGray">
+        <TextBlock Text="To create a new account, complete the following form:" Margin="5" />
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+            <StackPanel HorizontalAlignment="Stretch">
+                <TextBlock Text="First Name:" HorizontalAlignment="Center" Margin="5,0,5,0"/>
+                <TextBox Name="tbFirstName" HorizontalAlignment="Center" Margin="5,0,5,0" Width="100"/>
+            </StackPanel>
+            <StackPanel >
+                <TextBlock Text="Last Name:" HorizontalAlignment="Center" Margin="5, 0, 5, 0" />
+                <TextBox Name="tbLastName" HorizontalAlignment="Center" Margin="5, 0, 5, 0" Width="100"/>
+            </StackPanel>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+            <StackPanel HorizontalAlignment="Stretch" VerticalAlignment="Center">
+                <TextBlock Text="User Name:" HorizontalAlignment="Center" />
+                <TextBox Name="tbUserName" HorizontalAlignment="Center" Width="100"/>
+            </StackPanel>
+            <StackPanel >
+                <TextBlock Text="Password:" HorizontalAlignment="Center" />
+                <PasswordBox Name="tbPassword" HorizontalAlignment="Center" Width="100"/>
+                <TextBlock Text="Retype Password:" HorizontalAlignment="Center" />
+                <PasswordBox Name="tbPasswordRetype" HorizontalAlignment="Center" Width="100"/>
+            </StackPanel>
+        </StackPanel>
+        <StackPanel>
+            <TextBlock Text="Select your prefered currency: " HorizontalAlignment="Center" Margin="5"/>
+            <StackPanel Name="spCurrencyRadios" Orientation="Horizontal" HorizontalAlignment="Center" Margin="5">
+                <RadioButton GroupName="grCurrencyRadios" Name="rbEuro" Content="Euro €" IsChecked="True" Checked="rbEuro_Checked" />
+                <RadioButton GroupName="grCurrencyRadios" Name="rbDollar" Content="Dollar $" Checked="rbDollar_Checked"/>
+                <RadioButton GroupName="grCurrencyRadios" Name="rbPound" Content="Pound £" Checked="rbPound_Checked"/>
+            </StackPanel>
+        </StackPanel>
+        <StackPanel>
+            <TextBlock Text="Enter starting balance:" HorizontalAlignment="Center" />
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <TextBlock Name="tblCurrency" />
+                <TextBox Name="tbStartingBalance" HorizontalAlignment="Center" HorizontalContentAlignment="Right" Text="0" Width="100" />
+                <TextBlock Text="." Margin="5, 0, 5, 0" FontSize="18" VerticalAlignment="Bottom" />
+                <TextBox Name="tbStartingBalanceSmall" HorizontalAlignment="Center" Text="00" HorizontalContentAlignment="Right" />
+            </StackPanel>
+        </StackPanel>
+
+
+        
+
+
+        
+
+        
+
+        <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
+            <Button Name="btnDone" Content="Done" Click="btnDone_Click" HorizontalAlignment="Center" Margin="25"/>
+            <Button Name="btnCancel" Content="Cancel" Click="btnCancel_Click" HorizontalAlignment="Center" Margin="25" />
+        </StackPanel>
+
+    </StackPanel>
+</Page>
